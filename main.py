@@ -3,7 +3,7 @@ from application import Application
 
 
 def run():
-    config = ApplicationConfig('Paint', 800, 400)
+    config = ApplicationConfig('Paint in Python', 1000, 600)
     application = Application(config)
     application.run()
 
