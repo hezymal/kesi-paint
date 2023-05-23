@@ -3,9 +3,9 @@ from entities.shape_type import ShapeType
 from utils.vector2 import Vector2
 
 
-class PointShape(BaseShape):
+class SmoothPointShape(BaseShape):
     def __init__(self, _id: int | None, position: Vector2):
-        super().__init__(ShapeType.POINT, _id)
+        super().__init__(ShapeType.SMOOTH_POINT, _id)
         self._position = position
 
     def get_position(self) -> Vector2:

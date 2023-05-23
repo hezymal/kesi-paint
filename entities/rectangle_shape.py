@@ -3,9 +3,9 @@ from entities.shape_type import ShapeType
 from utils.vector2 import Vector2
 
 
-class LineShape(BaseShape):
+class RectangleShape(BaseShape):
     def __init__(self, _id: int | None, start_position: Vector2, end_position: Vector2):
-        super().__init__(ShapeType.LINE, _id)
+        super().__init__(ShapeType.RECTANGLE, _id)
         self._start_position = start_position
         self._end_position = end_position
 

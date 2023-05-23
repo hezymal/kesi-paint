@@ -1,21 +1,22 @@
 from tkinter import *
-
-from proxies.canvas_proxy import CanvasProxy
-from proxies.menu_proxy import MenuProxy
+from tkinter import ttk
 
 
-class TkinterProxy:
+class TkinterService:
     def __init__(self, title: str, width: int, height: int):
         self._tk = self._create_tk(title, width, height)
 
-    def create_canvas(self) -> CanvasProxy:
-        return CanvasProxy(self._tk)
-
-    def create_menu(self) -> MenuProxy:
-        return MenuProxy(self._tk)
-
     def run_loop(self) -> None:
         self._tk.mainloop()
+
+    def quit(self) -> None:
+        self._tk.quit()
+
+    def create_frame(self) -> ttk.Frame:
+        return ttk.Frame(self._tk)
+
+    def create_canvas(self, bg: str = 'white') -> Canvas:
+        return Canvas(self._tk, bg=bg)
 
     @staticmethod
     def _create_tk(title: str, width: int, height: int) -> Tk:
